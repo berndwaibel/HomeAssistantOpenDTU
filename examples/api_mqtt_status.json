@@ -1,0 +1,20 @@
+{
+  "mqtt_enabled": false,
+  "mqtt_hostname": "",
+  "mqtt_port": 1883,
+  "mqtt_username": "",
+  "mqtt_topic": "solar/",
+  "mqtt_connected": false,
+  "mqtt_retain": true,
+  "mqtt_tls": false,
+  "mqtt_root_ca_cert_info": "cert. version     : 3\nserial number     : 82:10:CF:B0:D2:40:E3:59:44:63:E0:BB:63:82:8B:00\nissuer name       : C=US, O=Internet Security Research Group, CN=ISRG Root X1\nsubject name      : C=US, O=Internet Security Research Group, CN=ISRG Root X1\nissued  on        : 2015-06-04 11:04:38\nexpires on        : 2035-06-04 11:04:38\nsigned using      : RSA with SHA-256\nRSA key size      : 4096 bits\nbasic constraints : CA=true\nkey usage         : Key Cert Sign, CRL Sign\n",
+  "mqtt_tls_cert_login": false,
+  "mqtt_client_cert_info": "",
+  "mqtt_lwt_topic": "solar/dtu/status",
+  "mqtt_publish_interval": 5,
+  "mqtt_hass_enabled": false,
+  "mqtt_hass_expire": true,
+  "mqtt_hass_retain": true,
+  "mqtt_hass_topic": "homeassistant/",
+  "mqtt_hass_individualpanels": false
+}

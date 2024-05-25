@@ -1,0 +1,17 @@
+{
+  "123456789001": {
+    "limit_relative": 88,
+    "max_power": 300,
+    "limit_set_status": "Ok"
+  },
+  "123456789002": {
+    "limit_relative": 88,
+    "max_power": 300,
+    "limit_set_status": "Ok"
+  },
+  "123456789003": {
+    "limit_relative": 88,
+    "max_power": 300,
+    "limit_set_status": "Ok"
+  }
+}

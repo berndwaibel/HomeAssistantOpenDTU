@@ -1,0 +1,347 @@
+{
+  "inverters": [
+    {
+      "serial": "123456789001",
+      "name": "PV Garage links vorne",
+      "order": 0,
+      "data_age": 7046,
+      "poll_enabled": true,
+      "reachable": false,
+      "producing": false,
+      "limit_relative": 88,
+      "limit_absolute": 264,
+      "AC": {
+        "0": {
+          "Power": {
+            "v": 0,
+            "u": "W",
+            "d": 1
+          },
+          "Voltage": {
+            "v": 233,
+            "u": "V",
+            "d": 1
+          },
+          "Current": {
+            "v": 0,
+            "u": "A",
+            "d": 2
+          },
+          "Power DC": {
+            "v": 1.799999952,
+            "u": "W",
+            "d": 1
+          },
+          "YieldDay": {
+            "v": 539,
+            "u": "Wh",
+            "d": 0
+          },
+          "YieldTotal": {
+            "v": 276.8399963,
+            "u": "kWh",
+            "d": 3
+          },
+          "Frequency": {
+            "v": 49.95000076,
+            "u": "Hz",
+            "d": 2
+          },
+          "PowerFactor": {
+            "v": 0,
+            "u": "",
+            "d": 3
+          },
+          "ReactivePower": {
+            "v": 0,
+            "u": "var",
+            "d": 1
+          },
+          "Efficiency": {
+            "v": 0,
+            "u": "%",
+            "d": 3
+          }
+        }
+      },
+      "DC": {
+        "0": {
+          "name": {
+            "u": ""
+          },
+          "Power": {
+            "v": 1.799999952,
+            "u": "W",
+            "d": 1
+          },
+          "Voltage": {
+            "v": 31.60000038,
+            "u": "V",
+            "d": 1
+          },
+          "Current": {
+            "v": 0.059999999,
+            "u": "A",
+            "d": 2
+          },
+          "YieldDay": {
+            "v": 539,
+            "u": "Wh",
+            "d": 0
+          },
+          "YieldTotal": {
+            "v": 276.8399963,
+            "u": "kWh",
+            "d": 3
+          }
+        }
+      },
+      "INV": {
+        "0": {
+          "Temperature": {
+            "v": 16.70000076,
+            "u": "°C",
+            "d": 1
+          }
+        }
+      },
+      "events": 1
+    },
+    {
+      "serial": "123456789002",
+      "name": "PV Garage rechts vorne",
+      "order": 1,
+      "data_age": 6998,
+      "poll_enabled": true,
+      "reachable": false,
+      "producing": false,
+      "limit_relative": 88,
+      "limit_absolute": 264,
+      "AC": {
+        "0": {
+          "Power": {
+            "v": 0,
+            "u": "W",
+            "d": 1
+          },
+          "Voltage": {
+            "v": 232.6999969,
+            "u": "V",
+            "d": 1
+          },
+          "Current": {
+            "v": 0,
+            "u": "A",
+            "d": 2
+          },
+          "Power DC": {
+            "v": 1.200000048,
+            "u": "W",
+            "d": 1
+          },
+          "YieldDay": {
+            "v": 532,
+            "u": "Wh",
+            "d": 0
+          },
+          "YieldTotal": {
+            "v": 280.2619934,
+            "u": "kWh",
+            "d": 3
+          },
+          "Frequency": {
+            "v": 49.93000031,
+            "u": "Hz",
+            "d": 2
+          },
+          "PowerFactor": {
+            "v": 0,
+            "u": "",
+            "d": 3
+          },
+          "ReactivePower": {
+            "v": 0,
+            "u": "var",
+            "d": 1
+          },
+          "Efficiency": {
+            "v": 0,
+            "u": "%",
+            "d": 3
+          }
+        }
+      },
+      "DC": {
+        "0": {
+          "name": {
+            "u": ""
+          },
+          "Power": {
+            "v": 1.200000048,
+            "u": "W",
+            "d": 1
+          },
+          "Voltage": {
+            "v": 20.60000038,
+            "u": "V",
+            "d": 1
+          },
+          "Current": {
+            "v": 0.059999999,
+            "u": "A",
+            "d": 2
+          },
+          "YieldDay": {
+            "v": 532,
+            "u": "Wh",
+            "d": 0
+          },
+          "YieldTotal": {
+            "v": 280.2619934,
+            "u": "kWh",
+            "d": 3
+          }
+        }
+      },
+      "INV": {
+        "0": {
+          "Temperature": {
+            "v": 15.10000038,
+            "u": "°C",
+            "d": 1
+          }
+        }
+      },
+      "events": 1
+    },
+    {
+      "serial": "123456789003",
+      "name": "PV Garage links hinten",
+      "order": 2,
+      "data_age": 7098,
+      "poll_enabled": true,
+      "reachable": false,
+      "producing": false,
+      "limit_relative": 88,
+      "limit_absolute": 264,
+      "AC": {
+        "0": {
+          "Power": {
+            "v": 0,
+            "u": "W",
+            "d": 1
+          },
+          "Voltage": {
+            "v": 233.3999939,
+            "u": "V",
+            "d": 1
+          },
+          "Current": {
+            "v": 0,
+            "u": "A",
+            "d": 2
+          },
+          "Power DC": {
+            "v": 1.100000024,
+            "u": "W",
+            "d": 1
+          },
+          "YieldDay": {
+            "v": 450,
+            "u": "Wh",
+            "d": 0
+          },
+          "YieldTotal": {
+            "v": 211.0390015,
+            "u": "kWh",
+            "d": 3
+          },
+          "Frequency": {
+            "v": 50.00999832,
+            "u": "Hz",
+            "d": 2
+          },
+          "PowerFactor": {
+            "v": 0,
+            "u": "",
+            "d": 3
+          },
+          "ReactivePower": {
+            "v": 0,
+            "u": "var",
+            "d": 1
+          },
+          "Efficiency": {
+            "v": 0,
+            "u": "%",
+            "d": 3
+          }
+        }
+      },
+      "DC": {
+        "0": {
+          "name": {
+            "u": ""
+          },
+          "Power": {
+            "v": 1.100000024,
+            "u": "W",
+            "d": 1
+          },
+          "Voltage": {
+            "v": 22,
+            "u": "V",
+            "d": 1
+          },
+          "Current": {
+            "v": 0.050000001,
+            "u": "A",
+            "d": 2
+          },
+          "YieldDay": {
+            "v": 450,
+            "u": "Wh",
+            "d": 0
+          },
+          "YieldTotal": {
+            "v": 211.0390015,
+            "u": "kWh",
+            "d": 3
+          }
+        }
+      },
+      "INV": {
+        "0": {
+          "Temperature": {
+            "v": 18,
+            "u": "°C",
+            "d": 1
+          }
+        }
+      },
+      "events": 1
+    }
+  ],
+  "total": {
+    "Power": {
+      "v": 0,
+      "u": "W",
+      "d": 1
+    },
+    "YieldDay": {
+      "v": 1521,
+      "u": "Wh",
+      "d": 0
+    },
+    "YieldTotal": {
+      "v": 768.1409912,
+      "u": "kWh",
+      "d": 3
+    }
+  },
+  "hints": {
+    "time_sync": false,
+    "radio_problem": false,
+    "default_password": false
+  }
+}

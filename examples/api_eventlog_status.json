@@ -1,0 +1,11 @@
+{
+  "count": 1,
+  "events": [
+    {
+      "message_id": 1,
+      "message": "Inverter start",
+      "start_time": 20977,
+      "end_time": 20977
+    }
+  ]
+}
