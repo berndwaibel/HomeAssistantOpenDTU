@@ -9,6 +9,10 @@ You need to install the REST integration, which should look like this:
 ---
 
 Some visualisation added:
+
+Btw: You could see, that my 3rd panel is not fully exposed to the sun, it is "shaded" and produces less Watt than possible.
+This shows me, that I should move the panel to another position (without shade).
+
 ![REST Integration](./opendtu_visualisation_example.JPG)
 
 ---
