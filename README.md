@@ -10,6 +10,7 @@ What do you need to connect to your OpenDTU:
 As editor you could use one of the following add-ons (i am using both):
 * File Editor
 * Studio Code Server
+
 After that you can create visualisations for the entites (which is not described here)
 
 ## Setup
