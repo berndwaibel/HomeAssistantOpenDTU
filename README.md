@@ -6,6 +6,7 @@ What do you need to connect to your OpenDTU:
 2. You need to download and copy the examples/opendtu.yml to your system
 3. You need to edit the line with the ip address in your copy of the opendtu.yml
 4. You need to link from your local configuration.yml to your copy of the opendtu.yml
+
 As editor you could use one of the following add-ons (i am using both):
 * File Editor
 * Studio Code Server
