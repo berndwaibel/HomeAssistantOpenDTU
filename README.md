@@ -1,5 +1,16 @@
 # OpenDTU and Shelly for photovoltaic systems - Integration into HomeAssistant
 
+## TL;DR
+What do you need to connect to your OpenDTU:
+1. You need to install the REST integration (the base for connection to your opendtu using HTTP REST)
+2. You need to download and copy the examples/opendtu.yml to your system
+3. You need to edit the line with the ip address in your copy of the opendtu.yml
+4. You need to link from your local configuration.yml to your copy of the opendtu.yml
+As editor you could use one of the following add-ons (i am using both):
+* File Editor
+* Studio Code Server
+After that you can create visualisations for the entites (which is not described here)
+
 ## Setup
 As it is now allowed in germany to use "plug-and-play" photovoltaic systems with limit of 800 Watt,
 I decided to build this on my garage. The hardware I used is listed here: [HARDWARE.md](./docs/HARDWARE.md).
