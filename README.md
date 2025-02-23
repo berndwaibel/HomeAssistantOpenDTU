@@ -58,18 +58,15 @@ The Integration of the OpenDTU is described here:
 ## Usage
 How to use my work?
 1. You could read what I did, just for experience.
-2. You could get the "opendtu.yaml" file and use it 
-   1. Change the IP addresses inside the file to your addresses.
-   2. Change the numbers of the inverters to your inverter numbers.
+2. You could copy the files from the "opendtu" directory to you HA. Then use it by doing the following steps: 
+   1. Change the IP addresses inside the files to your ip address.
+   2. Change the serial numbers of the inverters in the files to your inverter numbers.
    3. If you have not exactly 3 inverters, you need to delete or copy some parts of the YAML files.
    4. If you have not exactly 1 string per inverter, you need to delete or copy some parts of the YAML files.
-3. The configuration.yaml is only an example, you have your own.
-   1. Add the last row. You need the "rest:" line.
-   2. If the "rest:" line is in configuration.yaml, you do not need it in opendtu.yaml.
-4. There are two versions:
-   1. The opendtu.yaml contains the whole REST API for my OpenDTU, with all data. It is include by the "rest:" line in configuration.yaml. 
-   2. The opendtu_small.yaml contains only the energy values, a minimum set of data.
-5. Contact me in case of questions, I will try to answer. Please give me time for that.
+3. The configuration.yaml is only an example, you have your own, adjust it:
+   1. Add the row starting with "rest:", and change the directory name (opendtu) if necessary.
+   2. If the "rest:" line is in configuration.yaml, you do not need to repeat it in the files.
+4. Contact me in case of questions, I will try to answer. Please give me time for answering.
 
 ## Links
 This work is based on the following guides, which I could recommend and for which I thank a lot:
@@ -87,6 +84,14 @@ This work is based on the following guides, which I could recommend and for whic
   * Home Assistant Integration REST API: https://www.home-assistant.io/integrations/rest/
   * Home Assistant Device Classes: https://www.home-assistant.io/integrations/sensor#device-class
   * Debug Tool for JSON data: https://jsonpath.com/
+
+## Update notes
+The following updates are done:
+ * v25.2.3: From version v23.6.28 to v25.2.3 the OpenDTU API changed:
+    * The AC/DC/INV values for the inverters are now requested per serial number.
+    * There are some new values, but not much relevant.
+    * The big opendtu.yml file has been splitted into smaller files, and the whole directory is included.
+    * The firmware image need to be upgraded, please see the update notes in OpenDTU.
 
 # About me
 My daily work is as an IT architect in different software projects, mainly programming with Java.
