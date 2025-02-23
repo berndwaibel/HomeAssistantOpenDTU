@@ -1,0 +1,46 @@
+## Read the state objects of OpenDTU using REST Integration
+## Each inverter needs to be listed here by serial numer (inv=*) !!!
+## See also: https://www.opendtu.solar/firmware/web_api/
+## The integration name "rest:" must appear in configuration.yaml, but belongs here, so it is not used here
+## rest:
+- resource: http://192.168.178.15/api/power/status
+  method: GET
+  scan_interval: 60
+  headers:
+    content-type: "application/json"
+  sensor:
+    ## Power Status - Value is each inverter if the state is set (true/false)
+    - name: "OpenDTU power status inverter 1"
+      value_template: "{{ value_json['112182216512'].power_set_status }}"
+    - name: "OpenDTU power status inverter 2"
+      value_template: "{{ value_json['112182217151'].power_set_status }}"
+    - name: "OpenDTU power status inverter 3"
+      value_template: "{{ value_json['112182217437'].power_set_status }}"
+- resource: http://192.168.178.15/api/limit/status
+  method: GET
+  scan_interval: 60
+  headers:
+    content-type: "application/json"
+  sensor:
+    ## Limit Status - Value is each inverter the relative limit (numeric)
+    - name: "OpenDTU limit status inverter 1"
+      value_template: "{{ value_json['112182216512'].limit_relative }}"
+      json_attributes_path: "$['112182216512']"
+      json_attributes:
+        - limit_relative
+        - max_power
+        - limit_set_status
+    - name: "OpenDTU limit status inverter 2"
+      value_template: "{{ value_json['112182217151'].limit_relative }}"
+      json_attributes_path: "$['112182217151']"
+      json_attributes:
+        - limit_relative
+        - max_power
+        - limit_set_status
+    - name: "OpenDTU limit status inverter 3"
+      value_template: "{{ value_json['112182217437'].limit_relative }}"
+      json_attributes_path: "$['112182217437']"
+      json_attributes:
+        - limit_relative
+        - max_power
+        - limit_set_status

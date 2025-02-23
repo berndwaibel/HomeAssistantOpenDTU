@@ -1,0 +1,112 @@
+## Read the state objects of OpenDTU using REST Integration
+## See also: https://www.opendtu.solar/firmware/web_api/
+## The integration name "rest:" must appear in configuration.yaml, but belongs here, so it is not used here
+## rest:
+- resource: http://192.168.178.15/api/livedata/status?inv=112182217437
+  method: GET
+  scan_interval: 60
+  headers:
+    content-type: "application/json"
+  sensor:
+    ## Inverter values for one inverter
+    - name: "OpenDTU inverters 2 data"
+      value_template: "{{ value_json.inverters[0].data_age }}"
+      json_attributes_path: "$.inverters[0]"
+      json_attributes:
+        - serial
+        - name
+        - order
+        - data_age
+        - poll_enabled
+        - reachable
+        - producing
+        - limit_relative
+        - limit_absolute
+        - events
+    ## Inverter AC for one inverter
+    - name: "OpenDTU inverters 2 AC Power"
+      value_template: "{{ value_json.inverters[0].AC['0'].Power.v | round(1) }}"
+      unit_of_measurement: "W"
+      device_class: power
+    - name: "OpenDTU inverters 2 AC Voltage"
+      value_template: "{{ value_json.inverters[0].AC['0'].Voltage.v | round(1) }}"
+      unit_of_measurement: "V"
+      device_class: voltage
+    - name: "OpenDTU inverters 2 AC Current"
+      value_template: "{{ value_json.inverters[0].AC['0'].Current.v | round(2) }}"
+      unit_of_measurement: "A"
+      device_class: current
+    - name: "OpenDTU inverters 2 AC Frequency"
+      value_template: "{{ value_json.inverters[0].AC['0'].Frequency.v | round(2) }}"
+      unit_of_measurement: "Hz"
+      device_class: frequency
+    - name: "OpenDTU inverters 2 AC PowerFactor"
+      value_template: "{{ value_json.inverters[0].AC['0'].PowerFactor.v | round(3) }}"
+      unit_of_measurement: ""
+      # device_class: none
+    - name: "OpenDTU inverters 2 AC ReactivePower"
+      value_template: "{{ value_json.inverters[0].AC['0'].ReactivePower.v | round(1) }}"
+      unit_of_measurement: "var"
+      device_class: reactive_power
+    ## Inverter DC for one inverter
+    - name: "OpenDTU inverters 2 DC Power"
+      value_template: "{{ value_json.inverters[0].DC['0'].Power.v | round(1) }}"
+      unit_of_measurement: "W"
+      device_class: power
+    - name: "OpenDTU inverters 2 DC Voltage"
+      value_template: "{{ value_json.inverters[0].DC['0'].Voltage.v | round(1) }}"
+      unit_of_measurement: "V"
+      device_class: voltage
+    - name: "OpenDTU inverters 2 DC Current"
+      value_template: "{{ value_json.inverters[0].DC['0'].Current.v | round(2) }}"
+      unit_of_measurement: "A"
+      device_class: current
+    - name: "OpenDTU inverters 2 DC YieldDay"
+      value_template: "{{ value_json.inverters[0].DC['0'].YieldDay.v | round(0) }}"
+      unit_of_measurement: "Wh"
+      device_class: energy
+    - name: "OpenDTU inverters 2 DC YieldTotal"
+      value_template: "{{ value_json.inverters[0].DC['0'].YieldTotal.v | round(3) }}"
+      unit_of_measurement: "kWh"
+      device_class: energy
+    ## Inverter INV for one inverter
+    - name: "OpenDTU inverters 2 INV Power dc"
+      value_template: "{{ value_json.inverters[1].INV['0']['Power DC'].v | round(1) }}"
+      unit_of_measurement: "W"
+      device_class: power
+    - name: "OpenDTU inverters 2 INV YieldDay"
+      value_template: "{{ value_json.inverters[0].INV['0'].YieldDay.v | round(0) }}"
+      unit_of_measurement: "Wh"
+      device_class: energy
+    - name: "OpenDTU inverters 2 INV YieldTotal"
+      value_template: "{{ value_json.inverters[0].INV['0'].YieldTotal.v | round(3) }}"
+      unit_of_measurement: "kWh"
+      device_class: energy
+    - name: "OpenDTU inverters 2 INV Temperature"
+      value_template: "{{ value_json.inverters[0].INV['0'].Temperature.v | round(1) }}"
+      unit_of_measurement: "°C"
+      device_class: temperature
+    - name: "OpenDTU inverters 2 INV Efficiency"
+      value_template: "{{ value_json.inverters[0].INV['0'].Efficiency.v | round(3) }}"
+      unit_of_measurement: "%"
+      device_class: power_factor
+    ## Inverter Total for one inverter
+    - name: "OpenDTU inverters 2 total Power"
+      value_template: "{{ value_json.total.Power.v | round(1) }}"
+      unit_of_measurement: "W"
+      device_class: power
+    - name: "OpenDTU inverters 2 total YieldDay"
+      value_template: "{{ value_json.total.YieldDay.v | round(0) }}"
+      unit_of_measurement: "Wh"
+      device_class: energy
+    - name: "OpenDTU inverters 2 total YieldTotal"
+      value_template: "{{ value_json.total.YieldTotal.v | round(3) }}"
+      unit_of_measurement: "kWh"
+      device_class: energy
+    - name: "OpenDTU inverters 2 hints"
+      value_template: "OK"
+      json_attributes_path: "$.hints"
+      json_attributes:
+        - time_sync
+        - radio_problem
+        - default_password

@@ -1,0 +1,77 @@
+## Read the state objects of OpenDTU using REST Integration
+## See also: https://www.opendtu.solar/firmware/web_api/
+## The integration name "rest:" must appear in configuration.yaml, but belongs here, so it is not used here
+## rest:
+- resource: http://192.168.178.15/api/livedata/status
+  method: GET
+  scan_interval: 60
+  headers:
+    content-type: "application/json"
+  sensor:
+    ## Inverters summary
+    ## Inverter 0
+    - name: "OpenDTU inverters 0 global data"
+      value_template: "{{ value_json.inverters[0].data_age }}"
+      json_attributes_path: "$.inverters[0]"
+      json_attributes:
+        - serial
+        - name
+        - order
+        - data_age
+        - poll_enabled
+        - reachable
+        - producing
+        - limit_relative
+        - limit_absolute
+        - events
+    ## Inverter 1
+    - name: "OpenDTU inverters 1 global data"
+      value_template: "{{ value_json.inverters[1].data_age }}"
+      json_attributes_path: "$.inverters[1]"
+      json_attributes:
+        - serial
+        - name
+        - order
+        - data_age
+        - poll_enabled
+        - reachable
+        - producing
+        - limit_relative
+        - limit_absolute
+        - events
+    ## Inverter 2
+    - name: "OpenDTU inverters 2 global data"
+      value_template: "{{ value_json.inverters[2].data_age }}"
+      json_attributes_path: "$.inverters[2]"
+      json_attributes:
+        - serial
+        - name
+        - order
+        - data_age
+        - poll_enabled
+        - reachable
+        - producing
+        - limit_relative
+        - limit_absolute
+        - events
+    ## Total
+    - name: "OpenDTU total Power"
+      value_template: "{{ value_json.total.Power.v | round(1) }}"
+      unit_of_measurement: "W"
+      device_class: power
+    - name: "OpenDTU total YieldDay"
+      value_template: "{{ value_json.total.YieldDay.v | round(0) }}"
+      unit_of_measurement: "Wh"
+      device_class: energy
+    - name: "OpenDTU total YieldTotal"
+      value_template: "{{ value_json.total.YieldTotal.v | round(3) }}"
+      unit_of_measurement: "kWh"
+      device_class: energy
+    - name: "OpenDTU hints"
+      value_template: "OK"
+      json_attributes_path: "$.hints"
+      json_attributes:
+        - time_sync
+        - radio_problem
+        - default_password
+        - pin_mapping_issue

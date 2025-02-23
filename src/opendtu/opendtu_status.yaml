@@ -1,0 +1,124 @@
+## Read the state objects of OpenDTU using REST Integration
+## See also: https://www.opendtu.solar/firmware/web_api/
+## The integration name "rest:" must appear in configuration.yaml, but belongs here, so it is not used here
+## rest:
+- resource: http://192.168.178.15/api/system/status
+  method: GET
+  scan_interval: 60
+  headers:
+    content-type: "application/json"
+  sensor:
+    ## System Status - Value is the uptime (numeric)
+    - name: "OpenDTU system status"
+      value_template: "{{ value_json.uptime }}"
+      json_attributes_path: "$[]"
+      json_attributes:
+        - hostname
+        - sdkversion
+        - cpufreq
+        - cputemp
+        - heap_total
+        - heap_used
+        - heap_max_block
+        - heap_min_free
+        - psram_total
+        - psram_used
+        - sketch_total
+        - sketch_used
+        - littlefs_total
+        - littlefs_used
+        - chiprevision
+        - chipmodel
+        - chipcores
+        - flashsize
+        - resetreason_0
+        - resetreason_1
+        - cfgsavecount
+        - config_version
+        - git_hash
+        - pioenv
+        - uptime
+        - nrf_configured
+        - nrf_connected
+        - nrf_pvariant
+        - cmt_configured
+        - cmt_connected
+- resource: http://192.168.178.15/api/network/status
+  method: GET
+  scan_interval: 60
+  headers:
+    content-type: "application/json"
+  sensor:
+    ## Network Status - Value is the station availability status (true/false)
+    - name: "OpenDTU network status"
+      value_template: "{{ value_json.sta_status }}"
+      json_attributes_path: "$[]"
+      json_attributes:
+        - sta_status
+        - sta_ssid
+        - sta_bssid
+        - sta_rssi
+        - network_hostname
+        - network_ip
+        - network_netmask
+        - network_gateway
+        - network_dns1
+        - network_dns2
+        - network_mac
+        - network_mode
+        - ap_status
+        - ap_ssid
+        - ap_ip
+        - ap_mac
+        - ap_stationnum
+- resource: http://192.168.178.15/api/ntp/status
+  method: GET
+  scan_interval: 60
+  headers:
+    content-type: "application/json"
+  sensor:
+    ## NTP Status - Value is the ntp signal availability status (true/false)
+    - name: "OpenDTU ntp status"
+      value_template: "{{ value_json.ntp_status }}"
+      json_attributes_path: "$[]"
+      json_attributes:
+        - ntp_server
+        - ntp_timezone
+        - ntp_timezone_descr
+        - ntp_status
+        - ntp_localtime
+        - sun_risetime
+        - sun_settime
+        - sun_isSunsetAvailable
+        - sun_isDayPeriod
+- resource: http://192.168.178.15/api/mqtt/status
+  method: GET
+  scan_interval: 60
+  headers:
+    content-type: "application/json"
+  sensor:
+    ## MQTT Status - Value is if mqtt is enabled  (true/false)
+    - name: "OpenDTU mqtt status"
+      value_template: "{{ value_json.mqtt_enabled }}"
+      json_attributes_path: "$[]"
+      json_attributes:
+        - mqtt_enabled
+        - mqtt_hostname
+        - mqtt_port
+        - mqtt_clientid
+        - mqtt_username
+        - mqtt_topic
+        - mqtt_connected
+        - mqtt_retain
+        - mqtt_tls
+        - mqtt_root_ca_cert_info
+        - mqtt_tls_cert_login
+        - mqtt_client_cert_info
+        - mqtt_lwt_topic
+        - mqtt_publish_interval
+        - mqtt_clean_session
+        - mqtt_hass_enabled
+        - mqtt_hass_expire
+        - mqtt_hass_retain
+        - mqtt_hass_topic
+        - mqtt_hass_individualpanels

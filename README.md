@@ -37,9 +37,10 @@ The content:
 The implementation uses the REST API of the OpenDTU as described here: https://www.opendtu.solar/firmware/web_api/.
 
 The following APIs are covered by the YAML file:
-* http://192.168.178.15/api/eventlog/status?inv=123456789001
+* http://192.168.178.15/api/eventlog/status?inv=112182216512
 * http://192.168.178.15/api/limit/status
 * http://192.168.178.15/api/livedata/status
+* http://192.168.178.15/api/livedata/status?inv=112182216512
 * http://192.168.178.15/api/mqtt/status
 * http://192.168.178.15/api/network/status
 * http://192.168.178.15/api/ntp/status

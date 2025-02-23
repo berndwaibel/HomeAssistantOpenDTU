@@ -1,23 +1,66 @@
 {
   "hostname": "OpenDTU-28C110",
-  "sdkversion": "v4.4.4",
+  "sdkversion": "v4.4.7-dirty",
   "cpufreq": 240,
-  "heap_total": 289296,
-  "heap_used": 127948,
+  "cputemp": 58.33334,
+  "heap_total": 283112,
+  "heap_used": 132952,
+  "heap_max_block": 106484,
+  "heap_min_free": 94724,
+  "psram_total": 0,
+  "psram_used": 0,
   "sketch_total": 1966080,
-  "sketch_used": 1532512,
+  "sketch_used": 1753712,
   "littlefs_total": 196608,
-  "littlefs_used": 20480,
+  "littlefs_used": 24576,
   "chiprevision": 3,
   "chipmodel": "ESP32-D0WD-V3",
   "chipcores": 2,
+  "flashsize": 4194304,
+  "task_details": [
+    {
+      "name": "IDLE0",
+      "stack_watermark": 432,
+      "priority": 0
+    },
+    {
+      "name": "IDLE1",
+      "stack_watermark": 552,
+      "priority": 0
+    },
+    {
+      "name": "wifi",
+      "stack_watermark": 4412,
+      "priority": 23
+    },
+    {
+      "name": "tiT",
+      "stack_watermark": 1404,
+      "priority": 18
+    },
+    {
+      "name": "loopTask",
+      "stack_watermark": 5596,
+      "priority": 1
+    },
+    {
+      "name": "async_tcp",
+      "stack_watermark": 12084,
+      "priority": 10
+    },
+    {
+      "name": "mqttclient",
+      "stack_watermark": 5880,
+      "priority": 1
+    }
+  ],
   "resetreason_0": "Software reset CPU",
   "resetreason_1": "Software reset CPU",
-  "cfgsavecount": 35,
-  "config_version": "0.1.25",
-  "git_hash": "v23.6.28",
-  "pioenv": "generic",
-  "uptime": 576279,
+  "cfgsavecount": 50,
+  "config_version": "0.1.29",
+  "git_hash": "v25.2.3",
+  "pioenv": "generic_esp32",
+  "uptime": 9062,
   "nrf_configured": true,
   "nrf_connected": true,
   "nrf_pvariant": true,
