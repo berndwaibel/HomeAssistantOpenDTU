@@ -2,32 +2,33 @@
 
 ## Short way to use
 What do you need to connect to your OpenDTU:
-1. You need to install the REST integration (the base for connection to your opendtu using HTTP REST)
-2. You need to download and copy the examples/opendtu.yml to your system
-3. You need to edit the line with the ip address in your copy of the opendtu.yml
-4. You need to link from your local configuration.yml to your copy of the opendtu.yml
+1. You need to install the REST integration in HA (the base for connection to your opendtu using HTTP REST)
+2. You need to download and copy the src/opendtu/*.yml files to your system (into a directory named opendtu)
+3. You need to edit the lines with the ip address in the files
+4. You need to edit the lines with the serial numbers in the files
+5. You need to link from your local configuration.yml to include the files in the opendtu directory
 
-As editor you could use one of the following add-ons (i am using both):
+For editing the files in HA, you could use one of the following add-ons (i am using both):
 * File Editor
 * Studio Code Server
 
-After that you can create visualisations for the entites (which is not described here)
+After that you can create visualisations for the entities (which is not described here)
 
 ## Setup
-I am currently using OpenDTU Version v23.6.28. Update is work in progress.
+I am currently using OpenDTU Version v25.2.3.
 
 As it is now allowed in germany to use "plug-and-play" photovoltaic systems with limit of 800 Watt,
 I decided to build this on my garage. The hardware I used is listed here: [HARDWARE.md](./docs/HARDWARE.md).
 
 After installing the PV, I decided to integrate this into a new home automation system.
-The possibilites I found, are described here: [INTEGRATION.md](./docs/INTEGRATION.md).
+The possibilities I found, are described here: [INTEGRATION.md](./docs/INTEGRATION.md).
 
 Last but not least I decided to use "Home Assistant".
 Details are described here [HOMEASSISTANT.md](./docs/HOMEASSISTANT.md)
 
 ## Aim
 
-The aim of this documentation is, to delivery the sources, and describe the decisions and some experience.
+The aim of this documentation is to delivery the sources, and describe the decisions and some experience.
 
 The content:
 * In [src](./src) folder you could find working YAML files for integration into Home Assistant.
@@ -90,8 +91,8 @@ The following updates are done:
  * v25.2.3: From version v23.6.28 to v25.2.3 the OpenDTU API changed:
     * The AC/DC/INV values for the inverters are now requested per serial number.
     * There are some new values, but not much relevant.
-    * The big opendtu.yml file has been splitted into smaller files, and the whole directory is included.
-    * The firmware image need to be upgraded, please see the update notes in OpenDTU.
+    * The big opendtu.yml file has been splitted into smaller files, and the whole directory is now included.
+    * The firmware image on the OpenDTU device needed to be upgraded, please see the update notes in OpenDTU.
 
 # About me
 My daily work is as an IT architect in different software projects, mainly programming with Java.
