@@ -1,0 +1,152 @@
+type: masonry
+path: opendtu_inverters
+title: OpenDTU Inverters
+cards:
+  - type: vertical-stack
+    cards:
+      - type: gauge
+        entity: sensor.opendtu_inverters_0_ac_current
+      - type: gauge
+        entity: sensor.opendtu_inverters_0_ac_power
+      - type: gauge
+        entity: sensor.opendtu_inverters_0_ac_voltage
+      - type: gauge
+        entity: sensor.opendtu_inverters_0_dc_current
+      - type: gauge
+        entity: sensor.opendtu_inverters_0_dc_power
+      - type: gauge
+        entity: sensor.opendtu_inverters_0_dc_voltage
+      - type: gauge
+        entity: sensor.opendtu_inverters_0_dc_yieldday
+      - type: gauge
+        entity: sensor.opendtu_inverters_0_dc_yieldtotal
+    title: OpenDTU Inverter 0
+  - type: vertical-stack
+    cards:
+      - type: gauge
+        entity: sensor.opendtu_inverters_1_ac_current
+      - type: gauge
+        entity: sensor.opendtu_inverters_1_ac_power
+      - type: gauge
+        entity: sensor.opendtu_inverters_1_ac_voltage
+      - type: gauge
+        entity: sensor.opendtu_inverters_1_dc_current
+      - type: gauge
+        entity: sensor.opendtu_inverters_1_dc_power
+      - type: gauge
+        entity: sensor.opendtu_inverters_1_dc_voltage
+      - type: gauge
+        entity: sensor.opendtu_inverters_1_dc_yieldday
+      - type: gauge
+        entity: sensor.opendtu_inverters_1_dc_yieldtotal
+    title: OpenDTU Inverter 1
+  - type: vertical-stack
+    cards:
+      - type: gauge
+        entity: sensor.opendtu_inverters_2_ac_current
+      - type: gauge
+        entity: sensor.opendtu_inverters_2_ac_power
+      - type: gauge
+        entity: sensor.opendtu_inverters_2_ac_voltage
+      - type: gauge
+        entity: sensor.opendtu_inverters_2_dc_current
+      - type: gauge
+        entity: sensor.opendtu_inverters_2_dc_power
+      - type: gauge
+        entity: sensor.opendtu_inverters_1_dc_voltage
+      - type: gauge
+        entity: sensor.opendtu_inverters_2_dc_yieldday
+      - type: gauge
+        entity: sensor.opendtu_inverters_2_dc_yieldtotal
+    title: OpenDTU Inverter 2
+  - type: entities
+    entities:
+      - entity: sensor.opendtu_inverters_0_ac_power
+      - entity: sensor.opendtu_inverters_0_ac_voltage
+      - entity: sensor.opendtu_inverters_0_ac_current
+      - entity: sensor.opendtu_inverters_0_ac_frequency
+      - entity: sensor.opendtu_inverters_0_ac_reactivepower
+      - entity: sensor.opendtu_inverters_0_dc_power
+      - entity: sensor.opendtu_inverters_0_dc_voltage
+      - entity: sensor.opendtu_inverters_0_dc_current
+      - entity: sensor.opendtu_inverters_0_dc_yieldday
+      - entity: sensor.opendtu_inverters_0_dc_yieldtotal
+      - entity: sensor.opendtu_inverters_0_inv_power_dc
+      - entity: sensor.opendtu_inverters_0_inv_yieldday
+      - entity: sensor.opendtu_inverters_0_inv_yieldtotal
+      - entity: sensor.opendtu_inverters_0_inv_temperature
+      - entity: sensor.opendtu_inverters_0_inv_efficiency
+      - entity: binary_sensor.opendtu_inverters_0_hints_time_sync
+      - entity: binary_sensor.opendtu_inverters_0_hints_radio_problem
+      - entity: binary_sensor.opendtu_inverters_0_hints_default_password
+      - entity: binary_sensor.opendtu_inverters_0_hints_pin_mapping_issue
+      - entity: sensor.opendtu_inverters_0_events
+      - entity: sensor.opendtu_inverters_0_limit_relative
+      - entity: sensor.opendtu_inverters_0_limit_absolute
+      - entity: binary_sensor.opendtu_inverters_0_poll_enabled
+      - entity: binary_sensor.opendtu_inverters_0_reachable
+      - entity: binary_sensor.opendtu_inverters_0_producing
+      - entity: sensor.opendtu_inverters_0_serial
+      - entity: sensor.opendtu_inverters_0_name
+    title: OpenDTU Inverter 0
+  - type: entities
+    entities:
+      - entity: sensor.opendtu_inverters_1_ac_power
+      - entity: sensor.opendtu_inverters_1_ac_voltage
+      - entity: sensor.opendtu_inverters_1_ac_current
+      - entity: sensor.opendtu_inverters_1_ac_frequency
+      - entity: sensor.opendtu_inverters_1_ac_reactivepower
+      - entity: sensor.opendtu_inverters_1_dc_power
+      - entity: sensor.opendtu_inverters_1_dc_voltage
+      - entity: sensor.opendtu_inverters_1_dc_current
+      - entity: sensor.opendtu_inverters_1_dc_yieldday
+      - entity: sensor.opendtu_inverters_1_dc_yieldtotal
+      - entity: sensor.opendtu_inverters_1_inv_power_dc
+      - entity: sensor.opendtu_inverters_1_inv_yieldday
+      - entity: sensor.opendtu_inverters_1_inv_yieldtotal
+      - entity: sensor.opendtu_inverters_1_inv_temperature
+      - entity: sensor.opendtu_inverters_1_inv_efficiency
+      - entity: binary_sensor.opendtu_inverters_1_hints_time_sync
+      - entity: binary_sensor.opendtu_inverters_1_hints_radio_problem
+      - entity: binary_sensor.opendtu_inverters_1_hints_default_password
+      - entity: binary_sensor.opendtu_inverters_1_hints_pin_mapping_issue
+      - entity: sensor.opendtu_inverters_1_events
+      - entity: sensor.opendtu_inverters_1_limit_relative
+      - entity: sensor.opendtu_inverters_1_limit_absolute
+      - entity: binary_sensor.opendtu_inverters_1_poll_enabled
+      - entity: binary_sensor.opendtu_inverters_1_reachable
+      - entity: binary_sensor.opendtu_inverters_1_producing
+      - entity: sensor.opendtu_inverters_1_serial
+      - entity: sensor.opendtu_inverters_1_name
+    title: OpenDTU Inverter 1
+  - type: entities
+    entities:
+      - entity: sensor.opendtu_inverters_2_ac_power
+      - entity: sensor.opendtu_inverters_2_ac_voltage
+      - entity: sensor.opendtu_inverters_2_ac_current
+      - entity: sensor.opendtu_inverters_2_ac_frequency
+      - entity: sensor.opendtu_inverters_2_ac_reactivepower
+      - entity: sensor.opendtu_inverters_2_dc_power
+      - entity: sensor.opendtu_inverters_2_dc_voltage
+      - entity: sensor.opendtu_inverters_2_dc_current
+      - entity: sensor.opendtu_inverters_2_dc_yieldday
+      - entity: sensor.opendtu_inverters_2_dc_yieldtotal
+      - entity: sensor.opendtu_inverters_2_inv_power_dc
+      - entity: sensor.opendtu_inverters_2_inv_yieldday
+      - entity: sensor.opendtu_inverters_2_inv_yieldtotal
+      - entity: sensor.opendtu_inverters_2_inv_temperature
+      - entity: sensor.opendtu_inverters_2_inv_efficiency
+      - entity: binary_sensor.opendtu_inverters_2_hints_time_sync
+      - entity: binary_sensor.opendtu_inverters_2_hints_radio_problem
+      - entity: binary_sensor.opendtu_inverters_2_hints_default_password
+      - entity: binary_sensor.opendtu_inverters_2_hints_pin_mapping_issue
+      - entity: sensor.opendtu_inverters_2_events
+      - entity: sensor.opendtu_inverters_2_limit_relative
+      - entity: sensor.opendtu_inverters_2_limit_absolute
+      - entity: binary_sensor.opendtu_inverters_2_poll_enabled
+      - entity: binary_sensor.opendtu_inverters_2_reachable
+      - entity: binary_sensor.opendtu_inverters_2_producing
+      - entity: sensor.opendtu_inverters_2_serial
+      - entity: sensor.opendtu_inverters_2_name
+    title: OpenDTU Inverter 2
+icon: mdi:solar-panel

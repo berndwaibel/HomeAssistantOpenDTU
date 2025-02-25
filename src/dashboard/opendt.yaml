@@ -1,0 +1,187 @@
+type: masonry
+path: opendtu
+icon: mdi:solar-power-variant-outline
+cards:
+  - graph: line
+    type: sensor
+    entity: sensor.opendtu_total_yieldday
+    detail: 1
+  - graph: line
+    type: sensor
+    entity: sensor.opendtu_total_yieldtotal
+    detail: 1
+  - graph: line
+    type: sensor
+    entity: sensor.opendtu_total_power
+    detail: 1
+  - type: history-graph
+    entities:
+      - entity: sensor.opendtu_total_yieldday
+    logarithmic_scale: false
+    fit_y_data: true
+  - type: history-graph
+    entities:
+      - entity: sensor.opendtu_total_yieldtotal
+    logarithmic_scale: false
+    fit_y_data: true
+  - type: history-graph
+    entities:
+      - entity: sensor.opendtu_total_power
+    logarithmic_scale: false
+    fit_y_data: true
+  - type: entities
+    entities:
+      - entity: sensor.opendtu_global_inverters_0_name
+      - entity: sensor.opendtu_global_inverters_0_serial
+      - entity: sensor.opendtu_global_inverters_0_order
+      - entity: sensor.opendtu_global_inverters_0_data_age
+      - entity: binary_sensor.opendtu_global_inverter_0_poll_enabled
+      - entity: binary_sensor.opendtu_global_inverter_0_reachable
+      - entity: binary_sensor.opendtu_global_inverter_0_producing
+      - entity: sensor.opendtu_global_inverters_0_limit_relative
+      - entity: sensor.opendtu_global_inverters_0_limit_absolute
+    title: OpenDTU Global Inverter 0
+  - type: entities
+    entities:
+      - entity: sensor.opendtu_global_inverters_1_name
+      - entity: sensor.opendtu_global_inverters_1_serial
+      - entity: sensor.opendtu_global_inverters_1_order
+      - entity: sensor.opendtu_global_inverters_1_data_age
+      - entity: binary_sensor.opendtu_global_inverter_1_poll_enabled
+      - entity: binary_sensor.opendtu_global_inverter_1_reachable
+      - entity: binary_sensor.opendtu_global_inverter_1_producing
+      - entity: sensor.opendtu_global_inverters_1_limit_relative
+      - entity: sensor.opendtu_global_inverters_1_limit_absolute
+    title: OpenDTU Global Inverter 1
+  - type: entities
+    entities:
+      - entity: sensor.opendtu_global_inverters_2_name
+      - entity: sensor.opendtu_global_inverters_2_serial
+      - entity: sensor.opendtu_global_inverters_2_order
+      - entity: sensor.opendtu_global_inverters_2_data_age
+      - entity: binary_sensor.opendtu_global_inverter_2_poll_enabled
+      - entity: binary_sensor.opendtu_global_inverter_2_reachable
+      - entity: binary_sensor.opendtu_global_inverter_2_producing
+      - entity: sensor.opendtu_global_inverters_2_limit_relative
+      - entity: sensor.opendtu_global_inverters_1_limit_absolute
+    title: OpenDTU Global Inverter 2
+  - type: entities
+    entities:
+      - entity: binary_sensor.opendtu_system_cmt_configured
+      - entity: binary_sensor.opendtu_system_cmt_connected
+      - entity: binary_sensor.opendtu_system_nrf_configured
+      - entity: binary_sensor.opendtu_system_nrf_connected
+      - entity: binary_sensor.opendtu_system_nrf_pvariant
+      - entity: sensor.opendtu_system_cputemp
+      - entity: sensor.opendtu_system_cpufreq
+      - entity: sensor.opendtu_system_uptime
+      - entity: sensor.opendtu_system_hostname
+      - entity: sensor.opendtu_system_sdkversion
+      - entity: sensor.opendtu_system_heap_total
+      - entity: sensor.opendtu_system_heap_used
+      - entity: sensor.opendtu_system_heap_max_block
+      - entity: sensor.opendtu_system_heap_min_free
+      - entity: sensor.opendtu_system_psram_total
+      - entity: sensor.opendtu_system_psram_used
+      - entity: sensor.opendtu_system_sketch_total
+      - entity: sensor.opendtu_system_sketch_used
+      - entity: sensor.opendtu_system_littlefs_total
+      - entity: sensor.opendtu_system_littlefs_used
+      - entity: sensor.opendtu_system_chiprevision
+      - entity: sensor.opendtu_system_chipmodel
+      - entity: sensor.opendtu_system_chipcores
+      - entity: sensor.opendtu_system_flashsize
+      - entity: sensor.opendtu_system_resetreason_0
+      - entity: sensor.opendtu_system_resetreason_1
+      - entity: sensor.opendtu_system_cfgsavecount
+      - entity: sensor.opendtu_system_config_version
+      - entity: sensor.opendtu_system_uptgit_hashime
+      - entity: sensor.opendtu_system_pioenv
+    title: OpenDTU System
+  - type: entities
+    entities:
+      - entity: sensor.opendtu_power_status_inverter_1
+      - entity: sensor.opendtu_power_status_inverter_2
+      - entity: sensor.opendtu_power_status_inverter_3
+      - entity: sensor.opendtu_limit_relative_inverter_1
+      - entity: sensor.opendtu_limit_relative_inverter_2
+      - entity: sensor.opendtu_limit_relative_inverter_3
+      - entity: sensor.opendtu_max_power_inverter_1
+      - entity: sensor.opendtu_max_power_inverter_2
+      - entity: sensor.opendtu_max_power_inverter_3
+      - entity: sensor.opendtu_limit_set_status_inverter_1
+      - entity: sensor.opendtu_limit_set_status_inverter_2
+      - entity: sensor.opendtu_limit_set_status_inverter_3
+    title: OpenDTU LiveData Power
+  - type: entities
+    entities:
+      - entity: binary_sensor.opendtu_hints_time_sync
+      - entity: binary_sensor.opendtu_hints_radio_problem
+      - entity: binary_sensor.opendtu_hints_default_password
+      - entity: binary_sensor.opendtu_hints_pin_mapping_issue
+      - entity: sensor.opendtu_total_power
+      - entity: sensor.opendtu_total_yieldday
+      - entity: sensor.opendtu_total_yieldtotal
+    title: OpenDTU Livedata Total
+  - type: entities
+    entities:
+      - entity: sensor.opendtu_event_log_inverter_1
+      - entity: sensor.opendtu_event_log_inverter_2
+      - entity: sensor.opendtu_event_log_inverter_3
+    title: OpenDTU Eventlog
+  - type: entities
+    entities:
+      - entity: binary_sensor.opendtu_network_sta_status
+      - entity: sensor.opendtu_network_sta_ssid
+      - entity: sensor.opendtu_network_sta_bssid
+      - entity: sensor.opendtu_network_sta_rssi
+      - entity: sensor.opendtu_network_network_hostname
+      - entity: sensor.opendtu_network_network_ip
+      - entity: sensor.opendtu_network_network_netmask
+      - entity: sensor.opendtu_network_network_gateway
+      - entity: sensor.opendtu_network_network_dns1
+      - entity: sensor.opendtu_network_network_dns2
+      - entity: sensor.opendtu_network_network_mac
+      - entity: sensor.opendtu_network_network_mode
+      - entity: binary_sensor.opendtu_network_ap_status
+      - entity: sensor.opendtu_network_ap_ssid
+      - entity: sensor.opendtu_network_ap_ip
+      - entity: sensor.opendtu_network_ap_mac
+      - entity: sensor.opendtu_network_ap_stationnum
+    title: OpenDTU Network
+  - type: entities
+    entities:
+      - entity: binary_sensor.opendtu_ntp_ntp_status
+      - entity: binary_sensor.opendtu_ntp_sun_issunsetavailable
+      - entity: binary_sensor.opendtu_ntp_sun_isdayperiod
+      - entity: sensor.opendtu_ntp_ntp_server
+      - entity: sensor.opendtu_ntp_ntp_timezone
+      - entity: sensor.opendtu_ntp_ntp_timezone_descr
+      - entity: sensor.opendtu_ntp_ntp_localtime
+      - entity: sensor.opendtu_ntp_sun_settime
+      - entity: sensor.opendtu_ntp_sun_risetime
+    title: OpenDTU NTP
+  - type: entities
+    entities:
+      - entity: binary_sensor.opendtu_mqtt_mqtt_enabled
+      - entity: sensor.opendtu_mqtt_mqtt_hostname
+      - entity: sensor.opendtu_mqtt_mqtt_port
+      - entity: sensor.opendtu_mqtt_mqtt_clientid
+      - entity: sensor.opendtu_mqtt_mqtt_username
+      - entity: sensor.opendtu_mqtt_mqtt_topic
+      - entity: binary_sensor.opendtu_mqtt_mqtt_connected
+      - entity: binary_sensor.opendtu_mqtt_mqtt_retain
+      - entity: binary_sensor.opendtu_mqtt_mqtt_tls
+      - entity: sensor.opendtu_mqtt_mqtt_root_ca_cert_info
+      - entity: binary_sensor.opendtu_mqtt_mqtt_tls_cert_login
+      - entity: sensor.opendtu_mqtt_mqtt_client_cert_info
+      - entity: sensor.opendtu_mqtt_mqtt_lwt_topic
+      - entity: sensor.opendtu_mqtt_mqtt_publish_interval
+      - entity: binary_sensor.opendtu_mqtt_mqtt_clean_session
+      - entity: binary_sensor.opendtu_mqtt_mqtt_hass_enabled
+      - entity: binary_sensor.opendtu_mqtt_mqtt_hass_expire
+      - entity: binary_sensor.opendtu_mqtt_mqtt_hass_retain
+      - entity: sensor.opendtu_mqtt_mqtt_hass_topic
+      - entity: binary_sensor.opendtu_mqtt_mqtt_hass_individualpanels
+    title: OpenDTU MQTT
+title: OpenDTU
