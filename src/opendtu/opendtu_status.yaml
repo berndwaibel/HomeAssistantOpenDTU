@@ -1,0 +1,230 @@
+## Read the state objects of OpenDTU using REST Integration
+## See also: https://www.opendtu.solar/firmware/web_api/
+## The integration name "rest:" must appear in configuration.yaml, but belongs here, so it is not used here
+## rest:
+- resource: http://192.168.178.15/api/system/status
+  method: GET
+  scan_interval: 60
+  headers:
+    content-type: "application/json"
+  binary_sensor:
+    ## System Status - value is on/off
+    - name: "OpenDTU system cmt_connected"
+      value_template: "{{ value_json.cmt_connected }}"
+      device_class: connectivity
+    - name: "OpenDTU system cmt_configured"
+      value_template: "{{ value_json.cmt_configured }}"
+      device_class: running
+    - name: "OpenDTU system nrf_connected"
+      value_template: "{{ value_json.nrf_connected }}"
+      device_class: connectivity
+    - name: "OpenDTU system nrf_configured"
+      value_template: "{{ value_json.nrf_configured }}"
+      device_class: running
+    - name: "OpenDTU system nrf_pvariant"
+      value_template: "{{ value_json.nrf_pvariant }}"
+      # device_class: None
+  sensor:
+    ## System Status - value is string, numeric or else
+    - name: "OpenDTU system cputemp"
+      value_template: "{{ value_json.cputemp }}"
+      unit_of_measurement: "°C"
+      device_class: temperature
+    - name: "OpenDTU system cpufreq"
+      value_template: "{{ value_json.cpufreq }}"
+      unit_of_measurement: "Hz"
+      device_class: frequency
+    - name: "OpenDTU system uptime"
+      value_template: "{{ value_json.uptime }}"
+    - name: "OpenDTU system hostname"
+      value_template: "{{ value_json.hostname }}"
+    - name: "OpenDTU system sdkversion"
+      value_template: "{{ value_json.sdkversion }}"
+    - name: "OpenDTU system heap_total"
+      value_template: "{{ value_json.heap_total }}"
+      unit_of_measurement: "B"
+      device_class: data_size
+    - name: "OpenDTU system heap_used"
+      value_template: "{{ value_json.heap_used }}"
+      unit_of_measurement: "B"
+      device_class: data_size
+    - name: "OpenDTU system heap_max_block"
+      value_template: "{{ value_json.heap_max_block }}"
+      unit_of_measurement: "B"
+      device_class: data_size
+    - name: "OpenDTU system heap_min_free"
+      value_template: "{{ value_json.heap_min_free }}"
+      unit_of_measurement: "B"
+      device_class: data_size
+    - name: "OpenDTU system psram_total"
+      value_template: "{{ value_json.psram_total }}"
+      unit_of_measurement: "B"
+      device_class: data_size
+    - name: "OpenDTU system psram_used"
+      value_template: "{{ value_json.psram_used }}"
+      unit_of_measurement: "B"
+      device_class: data_size
+    - name: "OpenDTU system sketch_total"
+      value_template: "{{ value_json.sketch_total }}"
+      unit_of_measurement: "B"
+      device_class: data_size
+    - name: "OpenDTU system sketch_used"
+      value_template: "{{ value_json.sketch_used }}"
+      unit_of_measurement: "B"
+      device_class: data_size
+    - name: "OpenDTU system littlefs_total"
+      value_template: "{{ value_json.littlefs_total }}"
+      unit_of_measurement: "B"
+      device_class: data_size
+    - name: "OpenDTU system littlefs_used"
+      value_template: "{{ value_json.littlefs_used }}"
+      unit_of_measurement: "B"
+      device_class: data_size
+    - name: "OpenDTU system chiprevision"
+      value_template: "{{ value_json.chiprevision }}"
+    - name: "OpenDTU system chipmodel"
+      value_template: "{{ value_json.chipmodel }}"
+    - name: "OpenDTU system chipcores"
+      value_template: "{{ value_json.chipcores }}"
+    - name: "OpenDTU system flashsize"
+      value_template: "{{ value_json.flashsize }}"
+      unit_of_measurement: "B"
+      device_class: data_size
+    - name: "OpenDTU system resetreason_0"
+      value_template: "{{ value_json.resetreason_0 }}"
+    - name: "OpenDTU system resetreason_1"
+      value_template: "{{ value_json.resetreason_1 }}"
+    - name: "OpenDTU system cfgsavecount"
+      value_template: "{{ value_json.cfgsavecount }}"
+    - name: "OpenDTU system config_version"
+      value_template: "{{ value_json.config_version }}"
+    - name: "OpenDTU system uptgit_hashime"
+      value_template: "{{ value_json.git_hash }}"
+    - name: "OpenDTU system pioenv"
+      value_template: "{{ value_json.pioenv }}"
+- resource: http://192.168.178.15/api/network/status
+  method: GET
+  scan_interval: 60
+  headers:
+    content-type: "application/json"
+  binary_sensor:
+    ## Network Status - value is on/off
+    - name: "OpenDTU network sta_status"
+      value_template: "{{ value_json.sta_status }}"
+      device_class: connectivity
+    - name: "OpenDTU network ap_status"
+      value_template: "{{ value_json.ap_status }}"
+      device_class: connectivity
+  sensor:
+    ## Network Status - value is string, numeric or else
+    - name: "OpenDTU network sta_ssid"
+      value_template: "{{ value_json.sta_ssid }}"
+    - name: "OpenDTU network sta_bssid"
+      value_template: "{{ value_json.sta_bssid }}"
+    - name: "OpenDTU network sta_rssi"
+      value_template: "{{ value_json.sta_rssi }}"
+    - name: "OpenDTU network network_hostname"
+      value_template: "{{ value_json.network_hostname }}"
+    - name: "OpenDTU network network_ip"
+      value_template: "{{ value_json.network_ip }}"
+    - name: "OpenDTU network network_netmask"
+      value_template: "{{ value_json.network_netmask }}"
+    - name: "OpenDTU network network_gateway"
+      value_template: "{{ value_json.network_gateway }}"
+    - name: "OpenDTU network network_dns1"
+      value_template: "{{ value_json.network_dns1 }}"
+    - name: "OpenDTU network network_dns2"
+      value_template: "{{ value_json.network_dns2 }}"
+    - name: "OpenDTU network network_mac"
+      value_template: "{{ value_json.network_mac }}"
+    - name: "OpenDTU network network_mode"
+      value_template: "{{ value_json.network_mode }}"
+    - name: "OpenDTU network ap_ssid"
+      value_template: "{{ value_json.ap_ssid }}"
+    - name: "OpenDTU network ap_ip"
+      value_template: "{{ value_json.ap_ip }}"
+    - name: "OpenDTU network ap_mac"
+      value_template: "{{ value_json.ap_mac }}"
+    - name: "OpenDTU network ap_stationnum"
+      value_template: "{{ value_json.ap_stationnum }}"
+- resource: http://192.168.178.15/api/ntp/status
+  method: GET
+  scan_interval: 60
+  headers:
+    content-type: "application/json"
+  binary_sensor:
+    ## NTP Status - value is true/false
+    - name: "OpenDTU ntp ntp_status"
+      value_template: "{{ value_json.ntp_status }}"
+      device_class: connectivity
+    - name: "OpenDTU ntp sun_isSunsetAvailable"
+      value_template: "{{ value_json.sun_isSunsetAvailable }}"
+      #device_class: None
+    - name: "OpenDTU ntp sun_isDayPeriod"
+      value_template: "{{ value_json.sun_isDayPeriod }}"
+      #device_class: None
+  sensor:
+    ## NTP Status - value is string, numeric or else
+    - name: "OpenDTU ntp ntp_server"
+      value_template: "{{ value_json.ntp_server }}"
+    - name: "OpenDTU ntp ntp_timezone"
+      value_template: "{{ value_json.ntp_timezone }}"
+    - name: "OpenDTU ntp ntp_timezone_descr"
+      value_template: "{{ value_json.ntp_timezone_descr }}"
+    - name: "OpenDTU ntp ntp_localtime"
+      value_template: "{{ value_json.ntp_localtime }}"
+    - name: "OpenDTU ntp sun_risetime"
+      value_template: "{{ value_json.sun_risetime }}"
+    - name: "OpenDTU ntp sun_settime"
+      value_template: "{{ value_json.sun_settime }}"
+- resource: http://192.168.178.15/api/mqtt/status
+  method: GET
+  scan_interval: 60
+  headers:
+    content-type: "application/json"
+  binary_sensor:
+    ## MQTT Status - value is true/false
+    - name: "OpenDTU mqtt mqtt_enabled"
+      value_template: "{{ value_json.mqtt_enabled }}"
+      device_class: running
+    - name: "OpenDTU mqtt mqtt_connected"
+      value_template: "{{ value_json.mqtt_connected }}"
+      device_class: connectivity
+    - name: "OpenDTU mqtt mqtt_retain"
+      value_template: "{{ value_json.mqtt_retain }}"
+    - name: "OpenDTU mqtt mqtt_tls"
+      value_template: "{{ value_json.mqtt_tls }}"
+    - name: "OpenDTU mqtt mqtt_tls_cert_login"
+      value_template: "{{ value_json.mqtt_tls_cert_login }}"
+    - name: "OpenDTU mqtt mqtt_clean_session"
+      value_template: "{{ value_json.mqtt_clean_session }}"
+    - name: "OpenDTU mqtt mqtt_hass_enabled"
+      value_template: "{{ value_json.mqtt_hass_enabled }}"
+    - name: "OpenDTU mqtt mqtt_hass_expire"
+      value_template: "{{ value_json.mqtt_hass_expire }}"
+    - name: "OpenDTU mqtt mqtt_hass_retain"
+      value_template: "{{ value_json.mqtt_hass_retain }}"
+    - name: "OpenDTU mqtt mqtt_hass_individualpanels"
+      value_template: "{{ value_json.mqtt_hass_individualpanels }}"
+  sensor:
+    ## MQTT Status - Value is if string or else
+    - name: "OpenDTU mqtt mqtt_hostname"
+      value_template: "{{ value_json.mqtt_hostname }}"
+    - name: "OpenDTU mqtt mqtt_port"
+      value_template: "{{ value_json.mqtt_port }}"
+    - name: "OpenDTU mqtt mqtt_clientid"
+      value_template: "{{ value_json.mqtt_clientid }}"
+    - name: "OpenDTU mqtt mqtt_username"
+      value_template: "{{ value_json.mqtt_username }}"
+    - name: "OpenDTU mqtt mqtt_topic"
+      value_template: "{{ value_json.mqtt_topic }}"
+    - name: "OpenDTU mqtt mqtt_root_ca_cert_info"
+      value_template: "{{ value_json.mqtt_root_ca_cert_info }}"
+    - name: "OpenDTU mqtt mqtt_client_cert_info"
+      value_template: "{{ value_json.mqtt_client_cert_info }}"
+    - name: "OpenDTU mqtt mqtt_lwt_topic"
+      value_template: "{{ value_json.mqtt_lwt_topic }}"
+    - name: "OpenDTU mqtt mqtt_publish_interval"
+      value_template: "{{ value_json.mqtt_publish_interval }}"
+    - name: "OpenDTU mqtt mqtt_hass_topic"
+      value_template: "{{ value_json.mqtt_hass_topic }}"

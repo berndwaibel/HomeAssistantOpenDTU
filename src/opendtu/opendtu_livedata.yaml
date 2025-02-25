@@ -1,0 +1,130 @@
+## Read the state objects of OpenDTU using REST Integration
+## See also: https://www.opendtu.solar/firmware/web_api/
+## The integration name "rest:" must appear in configuration.yaml, but belongs here, so it is not used here
+## rest:
+- resource: http://192.168.178.15/api/livedata/status
+  method: GET
+  scan_interval: 60
+  headers:
+    content-type: "application/json"
+  sensor:
+    ## OpenDTU total values (all inverters together)
+    - name: "OpenDTU total Power"
+      value_template: "{{ value_json.total.Power.v | round(1) }}"
+      unit_of_measurement: "W"
+      device_class: power
+    - name: "OpenDTU total YieldDay"
+      value_template: "{{ value_json.total.YieldDay.v | round(0) }}"
+      unit_of_measurement: "Wh"
+      device_class: energy
+    - name: "OpenDTU total YieldTotal"
+      value_template: "{{ value_json.total.YieldTotal.v | round(3) }}"
+      unit_of_measurement: "kWh"
+      device_class: energy
+    ## Inverter values for inverter 0
+    - name: "OpenDTU global inverters 0 serial"
+      value_template: "{{ value_json.inverters[0].serial }}"
+      # device_class: None
+    - name: "OpenDTU global inverters 0 name"
+      value_template: "{{ value_json.inverters[0].name }}"
+      # device_class: None
+    - name: "OpenDTU global inverters 0 order"
+      value_template: "{{ value_json.inverters[0].order }}"
+      # device_class: None
+    - name: "OpenDTU global inverters 0 data_age"
+      value_template: "{{ value_json.inverters[0].data_age }}"
+      # device_class: None
+    - name: "OpenDTU global inverters 0 limit_relative"
+      value_template: "{{ value_json.inverters[0].limit_relative }}"
+      unit_of_measurement: "%"
+      device_class: power_factor
+    - name: "OpenDTU global inverters 0 limit_absolute"
+      value_template: "{{ value_json.inverters[0].limit_absolute }}"
+      unit_of_measurement: "V"
+      device_class: voltage
+    ## Inverter values for inverter 1
+    - name: "OpenDTU global inverters 1 serial"
+      value_template: "{{ value_json.inverters[1].serial }}"
+      # device_class: None
+    - name: "OpenDTU global inverters 1 name"
+      value_template: "{{ value_json.inverters[1].name }}"
+      # device_class: None
+    - name: "OpenDTU global inverters 1 order"
+      value_template: "{{ value_json.inverters[1].order }}"
+      # device_class: None
+    - name: "OpenDTU global inverters 1 data_age"
+      value_template: "{{ value_json.inverters[1].data_age }}"
+      # device_class: None
+    - name: "OpenDTU global inverters 1 limit_relative"
+      value_template: "{{ value_json.inverters[1].limit_relative }}"
+      unit_of_measurement: "%"
+      device_class: power_factor
+    - name: "OpenDTU global inverters 1 limit_absolute"
+      value_template: "{{ value_json.inverters[1].limit_absolute }}"
+      unit_of_measurement: "V"
+      device_class: voltage
+    ## Inverter values for inverter 2
+    - name: "OpenDTU global inverters 2 serial"
+      value_template: "{{ value_json.inverters[2].serial }}"
+      # device_class: None
+    - name: "OpenDTU global inverters 2 name"
+      value_template: "{{ value_json.inverters[2].name }}"
+      # device_class: None
+    - name: "OpenDTU global inverters 2 order"
+      value_template: "{{ value_json.inverters[2].order }}"
+      # device_class: None
+    - name: "OpenDTU global inverters 2 data_age"
+      value_template: "{{ value_json.inverters[2].data_age }}"
+      # device_class: None
+    - name: "OpenDTU global inverters 2 limit_relative"
+      value_template: "{{ value_json.inverters[2].limit_relative }}"
+      unit_of_measurement: "%"
+      device_class: power_factor
+    - name: "OpenDTU global inverters 2 limit_absolute"
+      value_template: "{{ value_json.inverters[2].limit_absolute }}"
+      unit_of_measurement: "V"
+      device_class: voltage
+  binary_sensor:
+    ## Hints for the OpenDTU at all
+    - name: "OpenDTU hints time_sync"
+      value_template: "{{ value_json.hints.time_sync }}"
+      device_class: running
+    - name: "OpenDTU hints radio_problem"
+      value_template: "{{ value_json.hints.radio_problem }}"
+      device_class: problem
+    - name: "OpenDTU hints default_password"
+      value_template: "{{ value_json.hints.default_password }}"
+      device_class: problem
+    - name: "OpenDTU hints pin_mapping_issue"
+      value_template: "{{ value_json.hints.pin_mapping_issue }}"
+      device_class: problem
+    ## Inverter data for inverter 0
+    - name: "OpenDTU global inverter 0 poll_enabled"
+      value_template: "{{ value_json.inverters[0].poll_enabled }}"
+      device_class: running
+    - name: "OpenDTU global inverter 0 reachable"
+      value_template: "{{ value_json.inverters[0].reachable }}"
+      device_class: running
+    - name: "OpenDTU global inverter 0 producing"
+      value_template: "{{ value_json.inverters[0].producing }}"
+      device_class: running
+    ## Inverter data for inverter 1
+    - name: "OpenDTU global inverter 1 poll_enabled"
+      value_template: "{{ value_json.inverters[1].poll_enabled }}"
+      device_class: running
+    - name: "OpenDTU global inverter 1 reachable"
+      value_template: "{{ value_json.inverters[1].reachable }}"
+      device_class: running
+    - name: "OpenDTU global inverter 1 producing"
+      value_template: "{{ value_json.inverters[1].producing }}"
+      device_class: running
+    ## Inverter data for inverter 2
+    - name: "OpenDTU global inverter 2 poll_enabled"
+      value_template: "{{ value_json.inverters[2].poll_enabled }}"
+      device_class: running
+    - name: "OpenDTU global inverter 2 reachable"
+      value_template: "{{ value_json.inverters[2].reachable }}"
+      device_class: running
+    - name: "OpenDTU global inverter 2 producing"
+      value_template: "{{ value_json.inverters[2].producing }}"
+      device_class: running

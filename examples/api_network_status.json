@@ -1,19 +1,19 @@
 {
   "sta_status": true,
   "sta_ssid": "FRITZ!Box 7560 SH",
-  "sta_bssid": "00:00:00:00:00:00",
-  "sta_rssi": -56,
+  "sta_bssid": "C0:25:06:CE:04:03",
+  "sta_rssi": -60,
   "network_hostname": "OpenDTU-28C110",
   "network_ip": "192.168.178.15",
   "network_netmask": "255.255.255.0",
   "network_gateway": "192.168.178.1",
   "network_dns1": "192.168.178.1",
   "network_dns2": "0.0.0.0",
-  "network_mac": "00:00:00:00:00:00",
+  "network_mac": "B0:A7:32:28:C1:10",
   "network_mode": "Station",
   "ap_status": false,
   "ap_ssid": "OpenDTU-2670864",
   "ap_ip": "192.168.4.1",
-  "ap_mac": "00:00:00:00:00:00",
+  "ap_mac": "B0:A7:32:28:C1:11",
   "ap_stationnum": 0
 }
