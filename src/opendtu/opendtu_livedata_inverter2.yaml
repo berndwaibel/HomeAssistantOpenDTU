@@ -9,20 +9,29 @@
     content-type: "application/json"
   sensor:
     ## Inverter values for one inverter
-    - name: "OpenDTU inverters 2 data"
+    - name: "OpenDTU inverters 2 serial"
+      value_template: "{{ value_json.inverters[0].serial }}"
+      # device_class: None
+    - name: "OpenDTU inverters 2 name"
+      value_template: "{{ value_json.inverters[0].name }}"
+      # device_class: None
+    - name: "OpenDTU inverters 2 order"
+      value_template: "{{ value_json.inverters[0].order }}"
+      # device_class: None
+    - name: "OpenDTU inverters 2 data_age"
       value_template: "{{ value_json.inverters[0].data_age }}"
-      json_attributes_path: "$.inverters[0]"
-      json_attributes:
-        - serial
-        - name
-        - order
-        - data_age
-        - poll_enabled
-        - reachable
-        - producing
-        - limit_relative
-        - limit_absolute
-        - events
+      # device_class: None
+    - name: "OpenDTU inverters 2 limit_relative"
+      value_template: "{{ value_json.inverters[0].limit_relative }}"
+      unit_of_measurement: "%"
+      device_class: power_factor
+    - name: "OpenDTU inverters 2 limit_absolute"
+      value_template: "{{ value_json.inverters[0].limit_absolute }}"
+      unit_of_measurement: "V"
+      device_class: voltage
+    - name: "OpenDTU inverters 2 events"
+      value_template: "{{ value_json.inverters[0].events }}"
+      # device_class: None
     ## Inverter AC for one inverter
     - name: "OpenDTU inverters 2 AC Power"
       value_template: "{{ value_json.inverters[0].AC['0'].Power.v | round(1) }}"
@@ -70,7 +79,7 @@
       unit_of_measurement: "kWh"
       device_class: energy
     ## Inverter INV for one inverter
-    - name: "OpenDTU inverters 2 INV Power dc"
+    - name: "OpenDTU inverters 2 INV Power DC"
       value_template: "{{ value_json.inverters[1].INV['0']['Power DC'].v | round(1) }}"
       unit_of_measurement: "W"
       device_class: power
@@ -103,10 +112,27 @@
       value_template: "{{ value_json.total.YieldTotal.v | round(3) }}"
       unit_of_measurement: "kWh"
       device_class: energy
-    - name: "OpenDTU inverters 2 hints"
-      value_template: "OK"
-      json_attributes_path: "$.hints"
-      json_attributes:
-        - time_sync
-        - radio_problem
-        - default_password
+  binary_sensor:
+    ## Inverter data for one inverter
+    - name: "OpenDTU inverters 2 poll_enabled"
+      value_template: "{{ value_json.inverters[0].poll_enabled }}"
+      device_class: running
+    - name: "OpenDTU inverters 2 reachable"
+      value_template: "{{ value_json.inverters[0].reachable }}"
+      device_class: running
+    - name: "OpenDTU inverters 2 producing"
+      value_template: "{{ value_json.inverters[0].producing }}"
+      device_class: running
+    ## Inverter hints for one inverter
+    - name: "OpenDTU inverters 2 hints time_sync"
+      value_template: "{{ value_json.hints.time_sync }}"
+      device_class: running
+    - name: "OpenDTU inverters 2 hints radio_problem"
+      value_template: "{{ value_json.hints.radio_problem }}"
+      device_class: problem
+    - name: "OpenDTU inverters 2 hints default_password"
+      value_template: "{{ value_json.hints.default_password }}"
+      device_class: problem
+    - name: "OpenDTU inverters 2 hints pin_mapping_issue"
+      value_template: "{{ value_json.hints.pin_mapping_issue }}"
+      device_class: problem

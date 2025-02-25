@@ -9,7 +9,7 @@
   headers:
     content-type: "application/json"
   sensor:
-    ## Power Status - Value is each inverter if the state is set (true/false)
+    ## Power Status - Value is for each inverter if the state is set (ok)
     - name: "OpenDTU power status inverter 1"
       value_template: "{{ value_json['112182216512'].power_set_status }}"
     - name: "OpenDTU power status inverter 2"
@@ -22,25 +22,39 @@
   headers:
     content-type: "application/json"
   sensor:
-    ## Limit Status - Value is each inverter the relative limit (numeric)
-    - name: "OpenDTU limit status inverter 1"
+    ## Limit Status - Value is each inverter
+    - name: "OpenDTU limit_relative inverter 1"
       value_template: "{{ value_json['112182216512'].limit_relative }}"
-      json_attributes_path: "$['112182216512']"
-      json_attributes:
-        - limit_relative
-        - max_power
-        - limit_set_status
-    - name: "OpenDTU limit status inverter 2"
+      unit_of_measurement: "%"
+      device_class: power_factor
+    - name: "OpenDTU max_power inverter 1"
+      value_template: "{{ value_json['112182216512'].max_power }}"
+      unit_of_measurement: "W"
+      device_class: power
+    - name: "OpenDTU limit_set_status inverter 1"
+      value_template: "{{ value_json['112182216512'].limit_set_status }}"
+      # device_class: None
+    ## Limit Status - Value is each inverter
+    - name: "OpenDTU limit_relative inverter 2"
       value_template: "{{ value_json['112182217151'].limit_relative }}"
-      json_attributes_path: "$['112182217151']"
-      json_attributes:
-        - limit_relative
-        - max_power
-        - limit_set_status
-    - name: "OpenDTU limit status inverter 3"
+      unit_of_measurement: "%"
+      device_class: power_factor
+    - name: "OpenDTU max_power inverter 2"
+      value_template: "{{ value_json['112182217151'].max_power }}"
+      unit_of_measurement: "W"
+      device_class: power
+    - name: "OpenDTU limit_set_status inverter 2"
+      value_template: "{{ value_json['112182217151'].limit_set_status }}"
+      # device_class: None
+    ## Limit Status - Value is each inverter
+    - name: "OpenDTU limit_relative inverter 3"
       value_template: "{{ value_json['112182217437'].limit_relative }}"
-      json_attributes_path: "$['112182217437']"
-      json_attributes:
-        - limit_relative
-        - max_power
-        - limit_set_status
+      unit_of_measurement: "%"
+      device_class: power_factor
+    - name: "OpenDTU max_power inverter 3"
+      value_template: "{{ value_json['112182217437'].max_power }}"
+      unit_of_measurement: "W"
+      device_class: power
+    - name: "OpenDTU limit_set_status inverter 3"
+      value_template: "{{ value_json['112182217437'].limit_set_status }}"
+      # device_class: None
