@@ -60,8 +60,12 @@ The Integration of the OpenDTU is described here:
 How to use my work?
 1. You could read what I did, just for experience.
 2. You could copy the files from the "opendtu" directory to you HA. Then use it by doing the following steps: 
-   1. Change the IP addresses inside the files to your ip address.
+   1. Change the IP addresses inside the files to your ip address. 
+      <br>Global replace all occurrences of "192.168.178.15" with your OpenDTU IP address.
    2. Change the serial numbers of the inverters in the files to your inverter numbers.
+      <br>Global replace all occurrences of "112182216512" with your first inverter serial number.
+      <br>Global replace all occurrences of "112182217151" with your second inverter serial number.
+      <br>Global replace all occurrences of "112182217437" with your third inverter serial number.
    3. If you have not exactly 3 inverters, you need to delete or copy some parts of the YAML files.
    4. If you have not exactly 1 string per inverter, you need to delete or copy some parts of the YAML files.
 3. The configuration.yaml is only an example, you have your own, adjust it:
