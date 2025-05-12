@@ -91,6 +91,9 @@ This work is based on the following guides, which I could recommend and for whic
   * Home Assistant Integration REST API: https://www.home-assistant.io/integrations/rest/
   * Home Assistant Device Classes: https://www.home-assistant.io/integrations/sensor#device-class
   * Debug Tool for JSON data: https://jsonpath.com/
+  * The Home Assistant Core for developing: https://github.com/home-assistant/core
+* OpenHab - not used till now, but an option in future
+  * OpenHab for developing: https://github.com/openhab/openhab-core
 
 ## Update notes
 The following updates are done:
